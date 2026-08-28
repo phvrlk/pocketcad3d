@@ -369,7 +369,7 @@
             cursor: grab;
         }
 
-        /* Beta Form Section */
+        /* Beta Access Cards Section */
         .beta-form-section {
             background: linear-gradient(180deg, rgba(17, 24, 39, 0.9) 0%, rgba(10, 14, 23, 0.95) 100%);
             border-top: 1px solid var(--border-color);
@@ -380,13 +380,13 @@
         }
 
         .beta-form-container {
-            max-width: 780px;
+            max-width: 900px;
             margin: 0 auto;
             background: var(--bg-card);
             border: 1px solid rgba(0, 229, 255, 0.3);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), var(--shadow-glow);
             border-radius: 24px;
-            padding: 3rem;
+            padding: 3rem 2.5rem;
             backdrop-filter: blur(16px);
             position: relative;
         }
@@ -410,95 +410,124 @@
             margin-bottom: 1rem;
         }
 
-        .form-group {
-            margin-bottom: 1.4rem;
-            text-align: left;
+        .beta-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
         }
 
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .form-control {
-            width: 100%;
-            background: rgba(10, 14, 23, 0.8);
+        .beta-action-card {
+            background: rgba(10, 14, 23, 0.7);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 0.9rem 1.2rem;
-            color: var(--text-primary);
-            font-size: 1rem;
-            font-family: inherit;
-            outline: none;
-            transition: all 0.2s ease;
-        }
-
-        .form-control:focus {
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
-            background: rgba(10, 14, 23, 1);
-        }
-
-        .form-help {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 0.4rem;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: linear-gradient(135deg, #00e5ff 0%, #3b82f6 100%);
-            color: #0a0e17;
-            font-size: 1.05rem;
-            font-weight: 800;
-            padding: 1rem;
-            border-radius: 12px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 25px rgba(0, 229, 255, 0.35);
-            transition: all 0.2s ease;
-            margin-top: 1rem;
+            border-radius: 16px;
+            padding: 2rem;
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .beta-action-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.15);
+        }
+
+        .card-header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-cyan);
+            margin-bottom: 0.75rem;
+        }
+
+        .beta-action-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .beta-action-card p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.6rem;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 229, 255, 0.5);
-        }
-
-        .btn-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-status {
-            margin-top: 1.5rem;
-            padding: 1rem 1.25rem;
+            padding: 0.85rem 1.4rem;
             border-radius: 12px;
+            font-weight: 700;
             font-size: 0.95rem;
-            display: none;
-            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
         }
 
-        .status-success {
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid rgba(16, 185, 129, 0.4);
-            color: #34d399;
-            display: block;
+        .card-btn-web {
+            background: linear-gradient(135deg, #00e5ff 0%, #3b82f6 100%);
+            color: #0a0e17;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
         }
 
-        .status-error {
-            background: rgba(239, 68, 68, 0.15);
-            border: 1px solid rgba(239, 68, 68, 0.4);
-            color: #f87171;
-            display: block;
+        .card-btn-web:hover {
+            box-shadow: 0 6px 20px rgba(0, 229, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .card-btn-android {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .card-btn-android:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            transform: translateY(-2px);
+        }
+
+        .beta-steps-box {
+            background: rgba(10, 14, 23, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .beta-steps-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent-amber);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .beta-steps-box ol {
+            padding-left: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .beta-steps-box ol li {
+            margin-bottom: 0.4rem;
+        }
+
+        .beta-steps-box a {
+            color: var(--accent-cyan);
+            text-decoration: underline;
         }
 
         /* Features Section */
@@ -775,6 +804,9 @@
             .nav-links {
                 display: none;
             }
+            .beta-cards-grid {
+                grid-template-columns: 1fr;
+            }
             .beta-form-container {
                 padding: 2rem 1.5rem;
             }
@@ -844,7 +876,7 @@
             </p>
             <div class="hero-cta-group">
                 <a href="#join-beta" class="btn-primary" id="btn-hero-download">
-                    🚀 Записатися на бета-тест
+                    🚀 Приєднатися до Beta в Google Play
                 </a>
                 <a href="#features" class="btn-outline" id="btn-hero-explore">
                     Огляд функцій ↓
@@ -880,40 +912,51 @@
         </div>
     </section>
 
-    <!-- Beta Testing Join Form Section -->
+    <!-- Beta Testing Direct Links Section -->
     <section class="beta-form-section" id="join-beta">
         <div class="beta-form-container">
             <div class="beta-form-header">
                 <div class="beta-form-badge">⚡ GOOGLE PLAY CLOSED BETA</div>
-                <h2 class="section-title" id="form-title" style="font-size: 2.2rem; margin-bottom: 0.75rem;">Станьте першим тестувальником</h2>
+                <h2 class="section-title" id="form-title" style="font-size: 2.2rem; margin-bottom: 0.75rem;">Як завантажити тестову версію</h2>
                 <p class="section-desc" id="form-desc" style="font-size: 1rem;">
-                    Введіть email вашого Google-акаунту, щоб отримати прямий доступ до закритого тестування PocketCAD 3D у Google Play Store.
+                    Отримайте ранній доступ до PocketCAD 3D через офіційну програму закритого тестування Google Play.
                 </p>
             </div>
 
-            <form id="betaForm" onsubmit="handleBetaSubmit(event)">
-                <div class="form-group">
-                    <label for="userEmail" id="lbl-email">Ваш Google Play Email (Gmail) *</label>
-                    <input type="email" id="userEmail" name="email" class="form-control" placeholder="your.name@gmail.com" required>
-                    <div class="form-help" id="help-email">Саме на цей Google акаунт буде надіслано запрошення до закритого тестування.</div>
+            <div class="beta-cards-grid">
+                <!-- Card 1: Web Opt-In -->
+                <div class="beta-action-card">
+                    <div>
+                        <div class="card-header-badge">Крок 1 • Підтвердження</div>
+                        <h3 id="c1-beta-title">Приєднатися через браузер (Web Opt-in)</h3>
+                        <p id="c1-beta-desc">Перейдіть за офіційним посиланням програми тестування Google Play та натисніть синю кнопку <strong>«Стати тестувальником»</strong>.</p>
+                    </div>
+                    <a href="https://play.google.com/apps/testing/com.pocketcad3d.cad" target="_blank" class="card-btn card-btn-web" id="c1-beta-btn">
+                        <span>🌐 Відкрити сторінку тестування →</span>
+                    </a>
                 </div>
 
-                <div class="form-group">
-                    <label for="userName" id="lbl-name">Ваше ім'я або спеціальність (опціонально)</label>
-                    <input type="text" id="userName" name="name" class="form-control" placeholder="Інженер / Геодезист / Проєктувальник">
+                <!-- Card 2: Google Play Store Direct -->
+                <div class="beta-action-card">
+                    <div>
+                        <div class="card-header-badge">Крок 2 • Встановлення</div>
+                        <h3 id="c2-beta-title">Завантажити з Google Play на Android</h3>
+                        <p id="c2-beta-desc">Після підтвердження участі відкрийте сторінку PocketCAD 3D у Play Маркеті на своєму смартфоні та встановіть додаток.</p>
+                    </div>
+                    <a href="https://play.google.com/store/apps/details?id=com.pocketcad3d.cad" target="_blank" class="card-btn card-btn-android" id="c2-beta-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.34 0 .66.11.92.32L17.2 11.2c.52.41.6 1.16.19 1.68-.06.07-.12.14-.19.19L5.42 21.68c-.26.21-.58.32-.92.32-.83 0-1.5-.67-1.5-1.5z"/></svg>
+                        <span>Відкрити в Play Маркеті</span>
+                    </a>
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="userDevice" id="lbl-device">Модель смартфону чи планшету Android (опціонально)</label>
-                    <input type="text" id="userDevice" name="device" class="form-control" placeholder="Samsung Galaxy S23, Xiaomi Pad, Lenovo...">
-                </div>
-
-                <button type="submit" id="btn-submit" class="btn-submit">
-                    <span>🚀 Подати заявку на тестування</span>
-                </button>
-
-                <div id="formStatus" class="form-status"></div>
-            </form>
+            <div class="beta-steps-box">
+                <h4 id="box-faq-title">ℹ️ Що робити, якщо сторінка тестування пише «Додаток недоступний»:</h4>
+                <ol id="box-faq-list">
+                    <li>Переконайтеся, що ви увійшли в браузері саме під тим Google-акаунтом (Gmail), який внесено до списку тестувальників розробника.</li>
+                    <li>Якщо вашого акаунта ще немає у списку тестувальників, надішліть свій Gmail розробнику на: <a href="mailto:petrhavryliuk@gmail.com?subject=PocketCAD%203D%20Beta%20Access">petrhavryliuk@gmail.com</a>.</li>
+                </ol>
+            </div>
         </div>
     </section>
 
@@ -964,7 +1007,7 @@
 
             <div class="feature-card">
                 <div class="feature-icon">🗺️</div>
-                <h3 id="card4-h">Ортофотоплани & GeoTIFF</h3>
+                <h3>Ортофотоплани & GeoTIFF</h3>
                 <p id="card4-p">Прив'язка растрових підоснов, підтримка просторових координат (WGS84, UTM, EPSG/СК-42/УСК-2000), накладання ортофотопланів дронів прямо під векторні креслення.</p>
                 <div class="feature-tags">
                     <span class="tag">GeoTIFF</span>
@@ -1093,7 +1136,7 @@
                 <ul>
                     <li><a href="privacy.html" id="ft-priv">Політика конфіденційності (Privacy Policy)</a></li>
                     <li><a href="app-ads.txt">Файл app-ads.txt (AdMob)</a></li>
-                    <li><a href="https://play.google.com/store/apps/details?id=com.pocketcad3d.cad" id="ft-gp">Сторінка в Google Play</a></li>
+                    <li><a href="https://play.google.com/apps/testing/com.pocketcad3d.cad" id="ft-gp">Програма тестування Google Play</a></li>
                 </ul>
             </div>
         </div>
@@ -1250,15 +1293,17 @@
                 badge: "⚡ Нове покоління мобільного САПР v2.0 (Beta)",
                 heroTitle: "Професійний <span>CAD & LiDAR</span> у вашій кишені",
                 heroDesc: "Повний набір інструментів AutoCAD, обробка мільйонів точок лазерного сканування, геодезичні вишукування та створення топопланів на Android.",
-                btnDownload: "🚀 Записатися на бета-тест", btnExplore: "Огляд функцій ↓",
+                btnDownload: "🚀 Приєднатися до Beta в Google Play", btnExplore: "Огляд функцій ↓",
                 statPoints: "Точок у реальному часі", statCompat: "Сумісність з DWG/DXF", statGpu: "GPU OpenGL прискорення",
-                formTitle: "Станьте першим тестувальником",
-                formDesc: "Введіть email вашого Google-акаунту, щоб отримати прямий доступ до закритого тестування PocketCAD 3D у Google Play Store.",
-                lblEmail: "Ваш Google Play Email (Gmail) *", helpEmail: "Саме на цей Google акаунт буде надіслано запрошення до закритого тестування.",
-                lblName: "Ваше ім'я або спеціальність (опціонально)", lblDevice: "Модель смартфону чи планшету Android (опціонально)",
-                btnSubmit: "🚀 Подати заявку на тестування",
-                msgSuccess: "✅ Дякуємо! Вашу заявку прийнято. Ми додамо ваш Google акаунт до списку тестувальників Google Play протягом 24 годин.",
-                msgError: "⚠️ Помилка надсилання. Перевірте введену адресу пошти або спробуйте пізніше.",
+                formTitle: "Як завантажити тестову версію",
+                formDesc: "Отримайте ранній доступ до PocketCAD 3D через офіційну програму закритого тестування Google Play.",
+                c1BetaTitle: "Приєднатися через браузер (Web Opt-in)",
+                c1BetaDesc: "Перейдіть за офіційним посиланням програми тестування Google Play та натисніть синю кнопку «Стати тестувальником».",
+                c1BetaBtn: "🌐 Відкрити сторінку тестування →",
+                c2BetaTitle: "Завантажити з Google Play на Android",
+                c2BetaDesc: "Після підтвердження участі відкрийте сторінку PocketCAD 3D у Play Маркеті на своєму смартфоні та встановіть додаток.",
+                c2BetaBtn: "Відкрити в Play Маркеті",
+                boxFaqTitle: "ℹ️ Що робити, якщо сторінка тестування пише «Додаток недоступний»:",
                 featTag: "Функціонал", featTitle: "Все необхідне для інженера, проєктувальника та геодезиста", featDesc: "Потужність настільного САПР та швидкість мобільного пристрою для роботи безпосередньо на об'єкті.",
                 c1h: "Повноцінний 2D/3D CAD", c1p: "Креслення ліній, поліліній, дуг, кіл, сплайнів, еліпсів, штрихувань (Hatch) та блоків. Підтримка об'єктних прив'язок (OSNAP), полярного та ортогонального режимів (ORTHO/POLAR).",
                 c2h: "LiDAR & Хмари точок", c2p: "Прямий імпорт LAS, LAZ, E57, PLY, PCD та XYZ. Візуалізація до 10 000 000 точок за кольором RGB, висотою Elevation або інтенсивністю. Адаптивне виділення ґрунту, дерев та стовпів.",
@@ -1287,15 +1332,17 @@
                 badge: "⚡ Next-Gen Mobile CAD & LiDAR v2.0 (Beta)",
                 heroTitle: "Professional <span>CAD & LiDAR</span> in Your Pocket",
                 heroDesc: "Complete AutoCAD drafting toolset, massive point cloud processing, field GNSS RTK survey, and topo plan generation on Android.",
-                btnDownload: "🚀 Join Closed Beta", btnExplore: "Explore Features ↓",
+                btnDownload: "🚀 Join Closed Beta on Google Play", btnExplore: "Explore Features ↓",
                 statPoints: "Real-time points", statCompat: "DWG/DXF Compatibility", statGpu: "GPU OpenGL Accelerated",
-                formTitle: "Become an Early Beta Tester",
-                formDesc: "Enter your Google Account email to receive direct invitation access to PocketCAD 3D Closed Testing on Google Play Store.",
-                lblEmail: "Your Google Play Email (Gmail) *", helpEmail: "This exact Google Account will be added to the Google Play tester whitelist.",
-                lblName: "Your Name or Occupation (Optional)", lblDevice: "Android Phone or Tablet Model (Optional)",
-                btnSubmit: "🚀 Submit Beta Application",
-                msgSuccess: "✅ Thank you! Your application has been received. We will add your Google account to Google Play Closed Testing within 24 hours.",
-                msgError: "⚠️ Submission error. Please verify your email address or try again later.",
+                formTitle: "How to Download the Beta Version",
+                formDesc: "Get early access to PocketCAD 3D through the official Google Play Closed Testing program.",
+                c1BetaTitle: "Join via Web Browser (Web Opt-in)",
+                c1BetaDesc: "Open the official Google Play testing link and click the blue button «Become a Tester».",
+                c1BetaBtn: "🌐 Open Testing Program Page →",
+                c2BetaTitle: "Download on Google Play Store",
+                c2BetaDesc: "After opting in, open PocketCAD 3D on your Android phone/tablet in Play Store to install.",
+                c2BetaBtn: "Open in Play Store",
+                boxFaqTitle: "ℹ️ What to do if Google Play shows «App not available»:",
                 featTag: "Capabilities", featTitle: "Everything Engineers, Designers & Surveyors Need", featDesc: "Desktop-grade CAD power combined with mobile agility for instant field calculations and drawings.",
                 c1h: "Full 2D/3D CAD Engine", c1p: "Draw Lines, Polylines, Arcs, Circles, Splines, Ellipses, Hatches, and Blocks. Precision Object Snaps (OSNAP), Polar Tracking & Ortho Mode.",
                 c2h: "LiDAR & Point Clouds", c2p: "Native LAS, LAZ, E57, PLY, PCD, and XYZ loading. Render up to 10M+ points in RGB, Elevation, or Intensity. Adaptive Ground, Tree & Pole extraction.",
@@ -1324,15 +1371,17 @@
                 badge: "⚡ הדור הבא של CAD נייד v2.0 (בטא)",
                 heroTitle: "<span>CAD ו-LiDAR</span> מקצועי בכיס שלך",
                 heroDesc: "סט כלי שרטוט AutoCAD מלא, עיבוד מיליוני נקודות סריקת לייזר, מדידות שטח GNSS RTK והפקת תוכניות ב-Android.",
-                btnDownload: "🚀 הרשמה לבטא סגורה", btnExplore: "גלה תכונות ↓",
+                btnDownload: "🚀 הצטרף לבטא ב-Google Play", btnExplore: "גלה תכונות ↓",
                 statPoints: "נקודות בזמן אמת", statCompat: "תאימות DWG/DXF", statGpu: "האצת GPU OpenGL",
-                formTitle: "היה הראשון לנסות את PocketCAD 3D",
-                formDesc: "הזן את כתובת ה-Google שלך כדי לקבל גישה ישירה לבדיקות הבטא בחנות Google Play.",
-                lblEmail: "חשבון Google Play (Gmail) *", helpEmail: "חשבון זה יתווסף ישירות לרשימת הבוחנים ב-Google Play.",
-                lblName: "שם או מקצוע (אופציונלי)", lblDevice: "דגם מכשיר Android (אופציונלי)",
-                btnSubmit: "🚀 שלח בקשת הצטרפות",
-                msgSuccess: "✅ תודה! בקשתך התקבלה. נוסיף את חשבונך לבדיקות תוך 24 שעות.",
-                msgError: "⚠️ שגיאה בשליחה. אנא ודא שהאימייל תקין ונסה שוב.",
+                formTitle: "כיצד להוריד את גרסת הבטא",
+                formDesc: "קבל גישה מוקדמת ל-PocketCAD 3D דרך תוכנית הבדיקה הסגורה הרשמית ב-Google Play.",
+                c1BetaTitle: "הצטרף דרך הדפדפן (Web Opt-in)",
+                c1BetaDesc: "פתח את קישור הבדיקה הרשמי ולחץ על הכפתור הכחול «הפוך לבוחן».",
+                c1BetaBtn: "🌐 פתח דף בדיקות ←",
+                c2BetaTitle: "הורדה ב-Google Play ב-Android",
+                c2BetaDesc: "לאחר אישור ההצטרפות, פתח את הדף ב-Google Play בחנות והתקן את האפליקציה.",
+                c2BetaBtn: "פתח ב-Play Store",
+                boxFaqTitle: "ℹ️ מה לעשות אם Google Play מציג «האפליקציה אינה זמינה»:",
                 featTag: "יכולות", featTitle: "כל מה שמהנדסים ומודדים צריכים", featDesc: "עוצמת CAD שולחני בשילוב ניידות מלאה לעבודה ישירה בשטח.",
                 c1h: "מנוע CAD 2D/3D מלא", c1p: "שרטוט קווים, פוליליין, קשתות, עיגולים, הצללות (Hatch) ובלוקים. הצמדות אובייקט (OSNAP), מעקב קוטבי ומצב אורתו.",
                 c2h: "ענני נקודות ו-LiDAR", c2p: "ייבוא ישיר של LAS, LAZ, E57, PLY ו-XYZ. תצוגה של עד 10 מיליון נקודות לפי RGB, גובה או עוצמה. זיהוי קרקע ועצים אוטומטי.",
@@ -1361,15 +1410,17 @@
                 badge: "⚡ Mobile CAD & LiDAR der nächsten Generation v2.0 (Beta)",
                 heroTitle: "Professionelles <span>CAD & LiDAR</span> in Ihrer Tasche",
                 heroDesc: "Vollständiges AutoCAD-Werkzeugset, Verarbeitung von Millionen LiDAR-Punkten, GNSS-RTK-Vermessung auf Android.",
-                btnDownload: "🚀 Für Beta-Test anmelden", btnExplore: "Funktionen entdecken ↓",
+                btnDownload: "🚀 Am Beta-Test in Google Play teilnehmen", btnExplore: "Funktionen entdecken ↓",
                 statPoints: "Echtzeit-Punkte", statCompat: "DWG/DXF Kompatibilität", statGpu: "GPU OpenGL Beschleunigt",
-                formTitle: "Werden Sie Beta-Tester",
-                formDesc: "Geben Sie Ihre Google-Konto-E-Mail ein, um Zugriff auf den geschlossenen Beta-Test im Google Play Store zu erhalten.",
-                lblEmail: "Ihre Google Play E-Mail (Gmail) *", helpEmail: "Dieses Google-Konto wird für den Google Play Betatest freigeschaltet.",
-                lblName: "Name oder Beruf (Optional)", lblDevice: "Android-Gerätemodell (Optional)",
-                btnSubmit: "🚀 Bewerbung absenden",
-                msgSuccess: "✅ Vielen Dank! Ihre Bewerbung ist eingegangen. Wir schalten Ihr Konto innerhalb von 24 Stunden frei.",
-                msgError: "⚠️ Übertragungsfehler. Bitte E-Mail überprüfen und erneut versuchen.",
+                formTitle: "So laden Sie die Beta-Version herunter",
+                formDesc: "Erhalten Sie frühzeitigen Zugriff auf PocketCAD 3D über das Google Play Closed-Testing-Programm.",
+                c1BetaTitle: "Über Web-Browser beitreten (Web Opt-in)",
+                c1BetaDesc: "Öffnen Sie den offiziellen Google Play Test-Link und klicken Sie auf «Tester werden».",
+                c1BetaBtn: "🌐 Test-Seite öffnen →",
+                c2BetaTitle: "Im Google Play Store herunterladen",
+                c2BetaDesc: "Nach der Bestätigung öffnen Sie PocketCAD 3D im Play Store auf Ihrem Android-Gerät.",
+                c2BetaBtn: "Im Play Store öffnen",
+                boxFaqTitle: "ℹ️ Was tun, wenn Google Play «App nicht verfügbar» anzeigt:",
                 featTag: "Funktionen", featTitle: "Alles für Ingenieure, Planer und Geodäten", featDesc: "Desktop-CAD-Leistung kombiniert mit mobiler Flexibilität direkt auf der Baustelle.",
                 c1h: "Vollständige 2D/3D-CAD-Engine", c1p: "Linien, Polylinien, Bögen, Kreise, Schraffuren (Hatch), Blöcke. Objektfänge (OSNAP), Polar- und Orthomodus.",
                 c2h: "LiDAR & Punktwolken", c2p: "Direkter Import von LAS, LAZ, E57, PLY, XYZ. Bis zu 10 Mio. Punkte in RGB, Höhe oder Intensität. Automatische Boden- und Baumextraktion.",
@@ -1398,15 +1449,17 @@
                 badge: "⚡ Mobilny CAD i LiDAR nowej generacji v2.0 (Beta)",
                 heroTitle: "Profesjonalny <span>CAD i LiDAR</span> w Twojej kieszeni",
                 heroDesc: "Pełny zestaw narzędzi AutoCAD, przetwarzanie milionów punktów skanowania laserowego, pomiary geodezyjne GNSS RTK na Androidzie.",
-                btnDownload: "🚀 Zapisz się na testy Beta", btnExplore: "Poznaj funkcje ↓",
+                btnDownload: "🚀 Dołącz do Beta w Google Play", btnExplore: "Poznaj funkcje ↓",
                 statPoints: "Punktów w czasie rzeczywistym", statCompat: "Zgodność z DWG/DXF", statGpu: "Akceleracja GPU OpenGL",
-                formTitle: "Zostań testerem PocketCAD 3D",
-                formDesc: "Podaj adres e-mail swojego konta Google, aby otrzymać bezpośredni dostęp do testów w Google Play Store.",
-                lblEmail: "Twój Google Play Email (Gmail) *", helpEmail: "Ten adres Google zostanie dodany do listy testerów w Google Play.",
-                lblName: "Imię lub specjalność (opcjonalnie)", lblDevice: "Model urządzenia z Androidem (opcjonalnie)",
-                btnSubmit: "🚀 Wyślij zgłoszenie",
-                msgSuccess: "✅ Dziękujemy! Zgłoszenie zostało wysłane. Dodamy Twoje konto w ciągu 24 godzin.",
-                msgError: "⚠️ Błąd wysyłania. Sprawdź poprawność adresu e-mail i spróbuj ponownie.",
+                formTitle: "Jak pobrać wersję testową",
+                formDesc: "Uzyskaj wczesny dostęp do PocketCAD 3D poprzez oficjalny program zamkniętych testów w Google Play.",
+                c1BetaTitle: "Dołącz przez przeglądarkę (Web Opt-in)",
+                c1BetaDesc: "Otwórz oficjalny link programu testowego Google Play i kliknij niebieski przycisk «Zostań testerem».",
+                c1BetaBtn: "🌐 Otwórz stronę testów →",
+                c2BetaTitle: "Pobierz ze sklepu Google Play",
+                c2BetaDesc: "Po potwierdzeniu udziału otwórz stronę PocketCAD 3D w sklepie Play na urządzeniu z Androidem i zainstaluj.",
+                c2BetaBtn: "Otwórz w Play Store",
+                boxFaqTitle: "ℹ️ Co zrobić, jeśli Google Play wyświetla «Aplikacja niedostępna»:",
                 featTag: "Możliwości", featTitle: "Wszystko, czego potrzebuje inżynier i geodeta", featDesc: "Moc stacjonarnego CAD-a połączona z mobilnością w terenie.",
                 c1h: "Pełny silnik CAD 2D/3D", c1p: "Rysowanie linii, polilinii, łuków, okręgów, kreskowania (Hatch) i bloków. Precyzyjne przyciąganie (OSNAP), tryb biegunowy i orto.",
                 c2h: "LiDAR i Chmury punktów", c2p: "Bezpośredni import LAS, LAZ, E57, PLY, XYZ. Do 10 mln punktów w RGB lub wysokości. Automatyczna klasyfikacja gruntu i drzew.",
@@ -1454,14 +1507,16 @@
             document.getElementById('stat-compat').innerText = t.statCompat;
             document.getElementById('stat-gpu').innerText = t.statGpu;
 
-            // Form section
+            // Direct Beta Links section
             document.getElementById('form-title').innerText = t.formTitle;
             document.getElementById('form-desc').innerText = t.formDesc;
-            document.getElementById('lbl-email').innerText = t.lblEmail;
-            document.getElementById('help-email').innerText = t.helpEmail;
-            document.getElementById('lbl-name').innerText = t.lblName;
-            document.getElementById('lbl-device').innerText = t.lblDevice;
-            document.getElementById('btn-submit').innerHTML = `<span>${t.btnSubmit}</span>`;
+            document.getElementById('c1-beta-title').innerText = t.c1BetaTitle;
+            document.getElementById('c1-beta-desc').innerText = t.c1BetaDesc;
+            document.getElementById('c1-beta-btn').innerHTML = `<span>${t.c1BetaBtn}</span>`;
+            document.getElementById('c2-beta-title').innerText = t.c2BetaTitle;
+            document.getElementById('c2-beta-desc').innerText = t.c2BetaDesc;
+            document.getElementById('c2-beta-btn').querySelector('span').innerText = t.c2BetaBtn;
+            document.getElementById('box-faq-title').innerText = t.boxFaqTitle;
 
             document.getElementById('feat-tag').innerText = t.featTag;
             document.getElementById('feat-title').innerText = t.featTitle;
@@ -1470,7 +1525,7 @@
             document.getElementById('card1-h').innerText = t.c1h; document.getElementById('card1-p').innerText = t.c1p;
             document.getElementById('card2-h').innerText = t.c2h; document.getElementById('card2-p').innerText = t.c2p;
             document.getElementById('card3-h').innerText = t.c3h; document.getElementById('card3-p').innerText = t.c3p;
-            document.getElementById('card4-h').innerText = t.c4h; document.getElementById('card4-p').innerText = t.c4p;
+            document.getElementById('card4-p').innerText = t.c4p;
             document.getElementById('card5-h').innerText = t.c5h; document.getElementById('card5-p').innerText = t.c5p;
             document.getElementById('card6-h').innerText = t.c6h; document.getElementById('card6-p').innerText = t.c6p;
 
@@ -1513,70 +1568,6 @@
             localStorage.setItem('pocketcad_lang', lang);
         }
 
-        // Form Submit Handler
-        async function handleBetaSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('btn-submit');
-            const statusBox = document.getElementById('formStatus');
-            const lang = localStorage.getItem('pocketcad_lang') || 'uk';
-            const t = translations[lang] || translations.en;
-
-            const email = document.getElementById('userEmail').value.trim();
-            const name = document.getElementById('userName').value.trim();
-            const device = document.getElementById('userDevice').value.trim();
-
-            if (!email || !email.includes('@')) {
-                statusBox.className = 'form-status status-error';
-                statusBox.innerText = t.msgError;
-                return;
-            }
-
-            btn.disabled = true;
-            btn.innerHTML = '<span>⏳ Надсилання...</span>';
-            statusBox.style.display = 'none';
-
-            try {
-                // Submit to FormSubmit endpoint with JSON response
-                // Replace YOUR_EMAIL below or configure your preferred email receiver
-                const formData = {
-                    _subject: `Нова заявка на PocketCAD 3D Beta від ${email}`,
-                    email: email,
-                    name: name || "Не вказано",
-                    device: device || "Не вказано",
-                    submitted_at: new Date().toISOString()
-                };
-
-                const response = await fetch("https://formsubmit.co/ajax/petrhavryliuk@gmail.com", {
-                    method: "POST",
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                if (response.ok || response.status === 200) {
-                    statusBox.className = 'form-status status-success';
-                    statusBox.innerText = t.msgSuccess;
-                    document.getElementById('betaForm').reset();
-                } else {
-                    // Fallback to mailto if external endpoint is blocked
-                    window.location.href = `mailto:petrhavryliuk@gmail.com?subject=PocketCAD%203D%20Beta%20Application&body=Email:%20${encodeURIComponent(email)}%0AName:%20${encodeURIComponent(name)}%0ADevice:%20${encodeURIComponent(device)}`;
-                    statusBox.className = 'form-status status-success';
-                    statusBox.innerText = t.msgSuccess;
-                }
-            } catch (err) {
-                // Mailto fallback
-                window.location.href = `mailto:petrhavryliuk@gmail.com?subject=PocketCAD%203D%20Beta%20Application&body=Email:%20${encodeURIComponent(email)}%0AName:%20${encodeURIComponent(name)}%0ADevice:%20${encodeURIComponent(device)}`;
-                statusBox.className = 'form-status status-success';
-                statusBox.innerText = t.msgSuccess;
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = `<span>${t.btnSubmit}</span>`;
-            }
-        }
-
-        // Initialize language
         const savedLang = localStorage.getItem('pocketcad_lang') || 'uk';
         document.getElementById('langSelect').value = savedLang;
         changeLanguage(savedLang);
